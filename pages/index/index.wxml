@@ -1,4 +1,47 @@
 <!--index.wxml-->
 <view class="container">
-  
+
+  <!-- 搜索部分 -->
+  <view class="search">
+    <view class="search-input">
+      <icon type="search" size="16" class="search-icon" style="padding-right:10rpx;" />搜索
+    </view>
+  </view>
+
+  <!-- 轮播图 -->
+  <swiper indicator-dots indicator-color="rgba(255,255,255,0.3)" indicator-active-color="#fff" autoplay="{{autoplay}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item wx:for="{{imgUrls}}" wx:key="{{index}}">
+        <image src="{{item.image_src}}" class="slide-image" mode="aspectFill" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!-- 菜单栏 -->
+  <view class="menus">
+    <image wx:for="{{menusarry}}" wx:key="index" src="{{item.image_src}}" mode="aspectFill"></image>
+  </view>
+
+  <!-- 楼层 -->
+  <view class="floor" wx:for="{{louCeng}}" wx:key="{{index}}">
+    <!-- 楼层头部 -->
+    <view class="floor-title">
+      <image src="{{item.floor_title.image_src}}" mode="aspectFill"></image>
+    </view>
+    <!-- 楼层内容 -->
+    <view class="floor-conter">
+    <!-- 左边图片 -->
+      <view class="floor-content-left">
+        <image src="{{ item.product_list[0].image_src }}" mode="aspectFill"></image>
+      </view>
+      <!-- 右边图片 -->
+      <view class="floor-conter-right">
+      <image src="{{item.image_src}}" wx:for="{{item.product_list}}"
+       wx:key="{{index}}"
+      wx:if="{{index>0}}"
+       mode="aspectFill"></image>
+      </view>
+
+    </view>
+  </view>
 </view>
