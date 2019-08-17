@@ -3,13 +3,15 @@
     "pages/index/index",
     "pages/category/index",
     "pages/cart/index",
-    "pages/personal/index"
+    "pages/personal/index",
+    "pages/search_list/index",
+    "pages/goods_detail/index"
 
   ],
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#ff2d4a",
-    "navigationBarTitleText": "黑马优购",
+    "navigationBarTitleText": "CJ商城优购",
     "navigationBarTextStyle": "white"
   },
   "tabBar":{
