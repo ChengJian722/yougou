@@ -2,24 +2,58 @@
 <view class="container">
   <!-- 轮播图 -->
   <swiper class="swiper" indicator-dots>
-    <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+    <block wx:for="{{detail.pics}}" wx:key="{{index}}">
       <swiper-item>
-        <image src="{{item}}" class="slide-image" />
+        <image src="{{item.detail.pics}}" class="slide-image" />
       </swiper-item>
     </block>
   </swiper>
 
   <!-- 价格 -->
-  <view class="jiage">￥279</view>
+  <view class="jiage">￥{{detail.goods_price}}</view>
 
   <!-- 标题 -->
   <view class="goods-info">
     <view class="goods-title">
-     spike 经典武士大马士革直刀(微型) 户外野营直刀 收藏礼品刀 饰品刀具
+      {{detail.goods_name}}
     </view>
     <view class="goods-star">
       <view class="iconfont icon-shoucang"></view>
       <view class="star-text">收藏</view>
     </view>
   </view>
+  <view class="despatch">快递：
+    <text class="despatch-money">免费送</text>
+  </view>
+
+  <view class="promotion">促销：
+    <text class="promotion-money">满300减30元</text>
+  </view>
+  <!-- 详情解释部分 -->
+  <rich-text nodes="{{detail.goods_introduce}}" bindtap="tap"></rich-text>
+
+  <!-- 底部部分 -->
+  <view class="footer-bar">
+    <!-- 打开客服会话的按钮 -->
+    <button class="contact" open-type="contact">
+      联系客服
+    </button>
+    <!-- 联系客服 -->
+    <view class="kefu">
+      <icon class="iconfont icon-kefu"></icon>
+      <text class="lianxikefu">联系客服</text>
+    </view>
+    <!-- 购物车 -->
+    <navigator url="/pages/cart/index" open-type="switchTab" class="gouwuche">
+      <icon class="iconfont icon-gouwuche"></icon>
+      <text class="gouwuche">购物车</text>
+    </navigator>
+
+    <!-- 购买和购物车 -->
+    <view class="car-goumai">
+      <view class="car">加入购物车</view>
+      <view class="goumai">立即购买</view>
+    </view>
+  </view>
+
 </view>

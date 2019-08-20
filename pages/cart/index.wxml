@@ -1,3 +1,73 @@
 <!--pages/cart/index.wxml-->
-<text>购物车</text>
+<view class="container">
 
+  <!-- 收货地址部分 -->
+  <view class="address">
+    <!-- 收货人 -->
+    <view wx:if="{{adderss.userName}}">
+      <view class="ShouHuoRen">
+        <view class="mingZi">收货人：{{adderss.userName}}</view>
+        <view class="dianHua">{{adderss.telNumber}}</view>
+      </view>
+      <!-- 收货地址 -->
+      <view class="ShouHuoDiZhi">
+        收货地址： {{adderss.detailInfo}}
+      </view>
+    </view>
+    <!-- 收货地址 -->
+    <view class="ShouHuoRen" wx:else bindtap="handleadderss">添加收货地址</view>
+  </view>
+
+
+
+  <!-- 图片 -->
+  <image src="../../images/cart_border@2x.png" class="xiao-img"></image>
+
+  <!-- 优购生活馆 -->
+  <view class="shengHuoGuan">
+    <view class="iconfont icon-dianpu"></view>
+    <view class="house">优购生活馆</view>
+  </view>
+
+
+  <!-- 商品详细部分 -->
+  <view class="dingdan">
+    <!-- 状态图标 -->
+    <icon class="selected" type="success" size="16" color="red" />
+    <!-- 订单详情 -->
+    <view class="goods_item">
+      <image src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2851537706,2917975258&fm=26&gp=0.jpg"></image>
+      <!-- 右侧全部 -->
+      <view class="goods_item-right">
+        <!-- 标题 -->
+        <view class="goods_item-right-title">
+          哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈啊哈啊哈DSFSGBSDFGDSFGDSGSDGSFGS
+        </view>
+        <!-- 价格和数量 -->
+        <view class="goods_item-right-Price">
+          <view class="price">￥300</view>
+          <view class="shuliang">
+            <view class="shuliangjian">-</view>
+            <text>3</text>
+            <view class="shuliangjian">+</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部 -->
+  <view class="footer">
+    <view class="footer-left">
+      <icon type="success" size="16" color="red"></icon>
+      全选
+    </view>
+    <view class="footer-center">
+      <view>合计:
+        <text class="colorRed">￥ 151562</text>
+      </view>
+      <text class="colorGray">包含运费</text>
+    </view>
+    <view class="checkout">结算</view>
+  </view>
+</view>
